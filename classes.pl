@@ -68,23 +68,25 @@ elective(csc406).
 elective(csc411).
    
 /* Prerequisites */
-/* INCOMPLETE, need to figure out how to multiple prereq */
-prereq(csc140, csc145).
-prereq(csc140, csc180).
-prereq(csc140, csc198).
-prereq([csc140, csc130], csc201).
-prereq(csc145, csc201).
-prereq(csc101, csc207).
-prereq(csc145, csc245).
-prereq(csc145, csc250).
-prereq(csc306, csc140).
-prereq(csc245, csc310).
-prereq(csc245, csc311).
-prereq(csc245, csc312).
-prereq(csc245, csc345).
-prereq([csc250, csc245], csc398).
-prereq(csc250, csc402).
-prereq(csc245, csc403).
-prereq([csc145, csc250], csc404).
-prereq([csc101, csc140, csc250], csc406).
-prereq([csc245, csc250], csc411).
+prereq(csc101, []).
+prereq(csc130, []).
+prereq(csc140, []).
+prereq(csc145, [csc140]).
+prereq(csc180, [csc140]).
+prereq(csc198, [csc140]).
+prereq(csc201, [csc130, csc140]).
+prereq(csc201, [csc145]).
+prereq(csc207, [csc101]).
+prereq(csc245, [csc145]).
+prereq(csc250, [csc145]).
+prereq(csc306, [csc140]).
+prereq(csc310, [csc245]).
+prereq(csc311, [csc245]).
+prereq(csc312, [csc245]).
+prereq(csc345, [csc245]).
+prereq(csc398, [csc245, csc250]).
+prereq(csc402, [csc250]).
+prereq(csc403, [csc245]).
+prereq(csc404, [csc145, csc250]).
+prereq(csc406, [csc101, csc140, csc250]).
+prereq(csc411, [csc245, csc250]).

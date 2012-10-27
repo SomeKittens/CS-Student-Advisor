@@ -10,27 +10,18 @@ nextClass(Student, Class) :-
 	/* Get the name of the class and prints it */
 	className(Class, Y),
 	write(Y).
-	
+
+/* hasPrereqs/2 and hasClass/2 created using suggestions from mndrix 
+http://stackoverflow.com/a/13095799/1216976	*/
 /* Checks to see if the student has the required classes to take Class. */
 hasPrereqs(Student, Class) :-
-	(prereq(Pre, Class) -> 
-		hasClass(Student, Pre);
-	true).
-    
+  prereq(Class, Pres),
+  forall(member(Pre, Pres), hasClass(Student, Pre)).
 /* Checks to see if a student "has" credit for a class 
    We assume they'll pass their current class */
 hasClass(Student, Class) :-
-	(creditFor(Student, Class);
-	currentlyTaking(Student, Class)).
-hasClass(Student, ClassList) :-
-	/* Splits up the list into:
-	H = the first element of the list as an atom
-	T = The rest of the list elements as a list
-	(if there's only one list element, T is equal to []) */
-	[H|T] = ClassList,
-	hasClass(Student, H),
-	/* if T isn't equal to [], recursively check the rest of the list's elements */
-	(T \= [] -> hasClass(Student, T);true).
+  (creditFor(Student, Class);
+  currentlyTaking(Student, Class)).
 
 /* Which classes are required for which major */
 /* NOTE: required/1 does not include electives */
