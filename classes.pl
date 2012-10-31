@@ -90,3 +90,32 @@ prereq(csc403, [csc245]).
 prereq(csc404, [csc145, csc250]).
 prereq(csc406, [csc101, csc140, csc250]).
 prereq(csc411, [csc245, csc250]).
+
+/* Credits */
+credits(csc101, 2).
+credits(csc130, 3).
+credits(csc140, 3).
+credits(csc145, 3).
+credits(csc180, 1).
+credits(csc198, 1).
+credits(csc201, 3).
+credits(csc207, 2).
+credits(csc215, 3).
+credits(csc245, 3).
+credits(csc250, 3).
+credits(csc306, 3).
+credits(csc310, 3).
+credits(csc311, 3).
+credits(csc312, 3).
+credits(csc320, 3).
+credits(csc345, 3).
+credits(csc398, 1).
+credits(csc402, 3).
+credits(csc403, 3).
+credits(csc404, 3).
+credits(csc406, 3).
+credits(csc411, 3).
+credits(csc449, 3).
+credits(csc450, 3).
+credits(csc495, 3).
+credits(csc498, 3).
