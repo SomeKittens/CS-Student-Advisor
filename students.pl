@@ -3,11 +3,17 @@ major(john, cs).
 major(philbert, ism).
 
 accepted(randall).
+accepted(curtis).
 
 currentlyTaking(randall, csc312).
 currentlyTaking(john, csc140).
 currentlyTaking(philbert, csc245).
 currentlyTaking(philbert, csc130).
+
+:- dynamic(freeCredits/2).
+freeCredits(randall, 6). /* reports dot com */
+freeCredits(curtis, 3).
+freeCredits(john, 3).
 
 creditFor(randall, csc130).
 creditFor(randall, csc140).

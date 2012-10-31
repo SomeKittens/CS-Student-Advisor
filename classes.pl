@@ -115,7 +115,7 @@ credits(csc403, 3).
 credits(csc404, 3).
 credits(csc406, 3).
 credits(csc411, 3).
-credits(csc449, 3).
+credits(csc449, 1).
 credits(csc450, 3).
 credits(csc495, 3).
 credits(csc498, 3).
