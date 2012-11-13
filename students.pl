@@ -1,3 +1,6 @@
+/* Kinda breaks the abstraction I had going, but there's no good place for it */
+nextSemester(spring, odd).
+
 major(randall, cs).
 major(john, cs).
 major(philbert, ism).
@@ -10,10 +13,10 @@ currentlyTaking(john, csc140).
 currentlyTaking(philbert, csc245).
 currentlyTaking(philbert, csc130).
 
-:- dynamic(freeCredits/2).
+:- dynamic(freeCredits/2). % Indicates that we'll be changing this fact.
 freeCredits(randall, 6). /* reports dot com */
 freeCredits(curtis, 3).
-freeCredits(john, 3).
+freeCredits(john, 6).
 
 creditFor(randall, csc130).
 creditFor(randall, csc140).

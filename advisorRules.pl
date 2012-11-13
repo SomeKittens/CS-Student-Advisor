@@ -1,20 +1,35 @@
 nextClass(Student, Class) :-
-	class(Class),
 	% It's required for the major
-	major(Student, Major),	
+	major(Student, Major),
 	required(Major, Class),
 	% Student hasn't already taken it
 	not(hasClass(Student, Class)),
 	% Student has all the prequisites
-	hasPrereqs(Student, Class),
-	pruneClassesByCredit(Student, Class),
-	% Get the name of the class and prints it 
-	className(Class, Y),
-	writeln(Y),
+	hasPrereqs(Student, Class).
+	
+/**
+ * Determines if a student can graduate.
+ * If the student can, this prints out a congradulatory statement
+ * Else, it returns what courses the student should take next semester
+ * 
+ * We're skirting around the electives problem.  The group of classes that the
+ * student "needs" to graduate will return ALL electives that the student doesn't
+ * have credit for.
+ * We've got a error when there are more electives offered than the student needs.
+ * Perhaps we could track the students' elective credits as well?
+ */
+nextStep(Student, Season, YearModulo2) :-
+	%Find the classes that the student needs to graduate
+	nextClass(Student, StudentNextClasses),
+	%Determine which of those classes will be offered next semester
+	offered(StudentNextClasses, Season, YearModulo2),
+	%Classes will be prioritized by rarity
+	pruneClassesByCredit(Student, StudentNextClasses),
 	% Forces Prolog to write out all the options, then false.
-	% Remove if you're ever using nextClass in another function.
-	fail.
-
+	% Remove if you're ever using nextStep in another function.
+	writeln(StudentNextClasses),
+	false.
+	
 /* hasPrereqs/2 and hasClass/2 created using suggestions from mndrix 
 http://stackoverflow.com/a/13095799/1216976	*/
 /* Checks to see if the student has the required classes to take Class. */
@@ -38,7 +53,9 @@ pruneClassesByCredit(Student, Class) :-
 		RemainingCredits is SCredits - CCredits,
 		assert(freeCredits(Student, RemainingCredits));
 	false).
-	
+
+canGraduate(Student) :-
+  
 
 /* Which classes are required for which major */
 /* NOTE: required/2 does not include electives */

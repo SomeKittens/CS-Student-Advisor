@@ -119,3 +119,30 @@ credits(csc449, 1).
 credits(csc450, 3).
 credits(csc495, 3).
 credits(csc498, 3).
+
+/* Classes that are offered at limited times */
+/* Not actually true, I made them up */
+offered(csc101, _, _).
+offered(csc130, _, _).
+offered(csc140, fall, _).
+offered(csc145, spring, _).
+offered(csc180, spring, odd).
+offered(csc198, fall, _).
+offered(csc201, fall, even).
+offered(csc207, spring, _).
+offered(csc215, spring, _).
+offered(csc245, fall, _).
+offered(csc250, fall, _).
+offered(csc306, spring, odd).
+offered(csc310, fall, odd).
+offered(csc311, spring, even).
+offered(csc312, fall, even).
+/* On demand, special case: offered(csc320, _, _).*/
+offered(csc345, spring, odd).
+offered(csc398, fall, odd).
+offered(csc402, spring, even).
+offered(csc403, fall, even).
+offered(csc404, spring, odd).
+offered(csc406, spring, even).
+offered(csc411, fall, odd).
+offered(csc449, fall, even).
