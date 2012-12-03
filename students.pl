@@ -3,10 +3,13 @@ nextSemester(spring, odd).
 
 major(randall, cs).
 major(john, cs).
+major(curtis, cs).
+major(willhoft, cs).
 major(philbert, ism).
 
 accepted(randall).
 accepted(curtis).
+accepted(willhoft).
 
 currentlyTaking(randall, csc312).
 currentlyTaking(john, csc140).
@@ -28,6 +31,7 @@ creditFor(randall, csc250).
 creditFor(randall, csc311).
 creditFor(philbert, csc140).
 creditFor(philbert, csc145).
+creditFor(willhoft, _).
 
 /* Abstraction for record-keeping purposes */
 creditFor(Student, Class) :-

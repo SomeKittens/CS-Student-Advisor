@@ -54,9 +54,6 @@ pruneClassesByCredit(Student, Class) :-
 		assert(freeCredits(Student, RemainingCredits));
 	false).
 
-canGraduate(Student) :-
-  
-
 /* Which classes are required for which major */
 /* NOTE: required/2 does not include electives */
 required(_, csc140).
